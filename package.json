@@ -1,0 +1,62 @@
+{
+  "name": "react-lazy-skeleton",
+  "version": "0.1.0",
+  "description": "Responsive react image component with lazy-loading capabilities",
+  "author": "Ochuko Ekrresa <ekrresaochuko@gmail.com>",
+  "main": "build/index.js",
+  "module": "build/index.esm.js",
+  "browser": "build/index.umd.js",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "prebuild": "rimraf build",
+    "build": "rollup -c",
+    "test": "yarn test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chuck-huey/react-lazy-skeleton.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "react-image",
+    "react-lazy-pic",
+    "image",
+    "lazy-loading",
+    "progressive",
+    "fallback"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chuck-huey/react-lazy-skeleton/issues"
+  },
+  "homepage": "https://github.com/chuck-huey/react-lazy-skeleton#readme",
+  "engines": {
+    "node": ">=10"
+  },
+  "peerDependencies": {
+    "react": ">= 16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "13.0.0",
+    "@rollup/plugin-node-resolve": "8.0.1",
+    "@types/react": "16.9.38",
+    "@types/react-dom": "16.9.8",
+    "linaria": "1.3.3",
+    "prettier": "2.0.5",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "rimraf": "3.0.2",
+    "rollup": "2.16.1",
+    "rollup-plugin-css-only": "2.1.0",
+    "rollup-plugin-peer-deps-external": "2.2.2",
+    "rollup-plugin-size-snapshot": "0.12.0",
+    "rollup-plugin-terser": "6.1.0",
+    "rollup-plugin-typescript2": "0.27.1",
+    "typescript": "3.9.5"
+  },
+  "dependencies": {}
+}

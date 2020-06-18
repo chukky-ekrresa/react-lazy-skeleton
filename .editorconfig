@@ -1,0 +1,20 @@
+root = true
+
+[*]
+indent_style = tab
+indent_size = 2
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+end_of_line = lf
+
+[.md]
+trim_trailing_whitespace = false
+
+[node_modules/**]
+charset = unset
+indent_size = unset
+end_of_line = unset
+indent_style = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
