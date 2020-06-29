@@ -4,8 +4,6 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
 import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
-
-import linaria from 'linaria/rollup';
 import css from 'rollup-plugin-css-only';
 
 import packageJson from './package.json';
@@ -31,11 +29,8 @@ export default [
 			}),
 			commonjs(),
 			process.env.NODE_ENV === 'production' && terser(),
-			linaria({
-				sourceMap: process.env.NODE_ENV !== 'production'
-			}),
 			css({
-				output: 'styles.css'
+				output: 'build/styles.css'
 			})
 		]
 	},
@@ -53,16 +48,14 @@ export default [
 			resolve(),
 			typescript({
 				rollupCommonJSResolveHack: true,
-				typescript: require('typescript')
+				typescript: require('typescript'),
+				useTsconfigDeclarationDir: true
 			}),
 			commonjs(),
 			sizeSnapshot(),
 			process.env.NODE_ENV === 'production' && terser(),
-			linaria({
-				sourceMap: process.env.NODE_ENV !== 'production'
-			}),
 			css({
-				output: 'styles.css'
+				output: 'build/styles.css'
 			})
 		]
 	}
