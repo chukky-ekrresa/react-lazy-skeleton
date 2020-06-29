@@ -1,4 +1,4 @@
-.container{
+.container {
 	width: 100%;
 	max-width: 1200px;
 	margin: auto;
@@ -12,28 +12,28 @@
 	height: 100%;
 }
 
-.skeleton::before{
-content: '';
-		display: block;
-		position: absolute;
-		right: -100%;
-		top: 0;
-		height: 100%;
-		width: 100%;
-		background: linear-gradient(
-			to left,
-			transparent 0%,
-			#e8e8e8 50%,
-			transparent 100%
-		);
-		animation: load 1.2s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+.skeleton::before {
+	content: '';
+	display: block;
+	position: absolute;
+	right: -100%;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(
+		to left,
+		transparent 0%,
+		#e8e8e8 50%,
+		transparent 100%
+	);
+	animation: load 1.2s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+}
 
-		@keyframes load {
-		from {
-			right: -100%;
-		}
-		to {
-			right: 100%;
-		}
+@keyframes load {
+	from {
+		right: -100%;
+	}
+	to {
+		right: 100%;
 	}
 }
