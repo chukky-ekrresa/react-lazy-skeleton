@@ -3,7 +3,6 @@ import resolve from '@rollup/plugin-node-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
-import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
 import css from 'rollup-plugin-css-only';
 
 import packageJson from './package.json';
@@ -52,7 +51,6 @@ export default [
 				useTsconfigDeclarationDir: true
 			}),
 			commonjs(),
-			sizeSnapshot(),
 			process.env.NODE_ENV === 'production' && terser(),
 			css({
 				output: 'build/styles.css'

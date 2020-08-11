@@ -10,9 +10,9 @@
     "build"
   ],
   "scripts": {
-		"prebuild": "rimraf build",
-		"build": "rollup -c",
-		"postbuild": "yalc push",
+    "prebuild": "rimraf build",
+    "build": "rollup -c",
+    "postbuild": "yalc push",
     "test": "jest"
   },
   "repository": {
@@ -56,7 +56,6 @@
     "rollup": "2.16.1",
     "rollup-plugin-css-only": "2.1.0",
     "rollup-plugin-peer-deps-external": "2.2.2",
-    "rollup-plugin-size-snapshot": "0.12.0",
     "rollup-plugin-terser": "6.1.0",
     "rollup-plugin-typescript2": "0.27.1",
     "ts-jest": "26.1.0",
