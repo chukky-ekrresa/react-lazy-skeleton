@@ -1,14 +1,15 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Skeleton } from 'react-lazy-skeleton';
+import { Parent } from 'react-lazy-skeleton';
 
+import profile from './image/profile.jpg';
 import 'react-lazy-skeleton/build/styles.css';
 
 const App = () => {
 	return (
 		<div style={{ width: '222px', height: '255px', margin: 'auto' }}>
-			<Skeleton />
+			<Parent src={profile} />
 		</div>
 	);
 };
