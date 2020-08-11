@@ -1,7 +1,7 @@
 import React from 'react';
 
-import './app.css';
+import './styles/app.css';
 
-export function Skeleton() {
+export function Loader() {
 	return <div className="skeleton"></div>;
 }

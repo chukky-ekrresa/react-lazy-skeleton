@@ -1,1 +1,1 @@
-export { Skeleton } from './loader';
+export { Parent } from './image';
