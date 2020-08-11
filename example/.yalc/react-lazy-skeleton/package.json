@@ -1,6 +1,6 @@
 {
   "name": "react-lazy-skeleton",
-  "version": "0.1.1+5f45c34b",
+  "version": "0.1.1+ce28ac4e",
   "description": "Responsive react image component with lazy-loading capabilities",
   "author": "Ochuko Ekrresa <ekrresaochuko@gmail.com>",
   "main": "build/index.js",
