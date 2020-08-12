@@ -11,17 +11,16 @@ interface Props extends React.PropsWithChildren<unknown> {
 
 type ImageLoadStatus = 'idle' | 'loaded' | 'error';
 
-export function Parent(props: Props) {
+export function Parent(props: Props): JSX.Element {
 	const [imageLoaded, setImageLoaded] = React.useState<ImageLoadStatus>('idle');
 	const imageRef = React.useRef<HTMLImageElement>(null);
 	const [ref, inView] = useInView({ triggerOnce: true });
 
-	const imageListener = () => {
+	const imageLoadListener = () => {
 		setImageLoaded('loaded');
 	};
 
 	const imageErrorListener = () => {
-		imageRef.current!.alt = props.alt;
 		setImageLoaded('error');
 	};
 
@@ -38,7 +37,7 @@ export function Parent(props: Props) {
 			<img
 				ref={imageRef}
 				style={{ opacity: imageLoaded === 'loaded' ? 1 : 0 }}
-				onLoad={imageListener}
+				onLoad={imageLoadListener}
 				onError={imageErrorListener}
 				className={imgCss}
 				data-src={props.src}

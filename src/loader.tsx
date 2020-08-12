@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from 'linaria';
 
-export function Loader() {
+export function Loader(): JSX.Element {
 	return (
 		<div className={skeletonCss}>
 			<span className={loaderCss} />
