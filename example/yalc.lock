@@ -1,9 +1,0 @@
-{
-  "version": "v1",
-  "packages": {
-    "react-lazy-skeleton": {
-      "signature": "ce28ac4e9356b743ddbce6c2681adb6a",
-      "file": true
-    }
-  }
-}
