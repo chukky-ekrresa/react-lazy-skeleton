@@ -1,4 +1,5 @@
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import { css } from 'linaria';
 
 import { Loader } from './loader';
@@ -13,11 +14,10 @@ type ImageLoadStatus = 'idle' | 'loaded' | 'error';
 export function Parent(props: Props) {
 	const [imageLoaded, setImageLoaded] = React.useState<ImageLoadStatus>('idle');
 	const imageRef = React.useRef<HTMLImageElement>(null);
+	const [ref, inView] = useInView({ triggerOnce: true });
 
 	const imageListener = () => {
-		setTimeout(() => {
-			setImageLoaded('loaded');
-		}, 3000);
+		setImageLoaded('loaded');
 	};
 
 	const imageErrorListener = () => {
@@ -26,12 +26,14 @@ export function Parent(props: Props) {
 	};
 
 	React.useLayoutEffect(() => {
-		const img = imageRef.current as HTMLImageElement;
-		img.src = props.src;
-	}, []);
+		if (inView) {
+			const img = imageRef.current as HTMLImageElement;
+			img.src = img.dataset.src as string;
+		}
+	}, [inView]);
 
 	return (
-		<div className={parentCss} data-testid="parent">
+		<div ref={ref} className={parentCss} data-testid="parent">
 			{imageLoaded === 'idle' && <Loader />}
 			<img
 				ref={imageRef}
@@ -40,6 +42,7 @@ export function Parent(props: Props) {
 				onError={imageErrorListener}
 				className={imgCss}
 				data-src={props.src}
+				alt={props.alt}
 			/>
 		</div>
 	);
