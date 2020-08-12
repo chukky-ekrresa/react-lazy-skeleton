@@ -1,9 +1,10 @@
+import linaria from 'linaria/rollup';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
-import css from 'rollup-plugin-css-only';
+import postcss from 'rollup-plugin-postcss';
 
 import packageJson from './package.json';
 
@@ -28,8 +29,13 @@ export default [
 			}),
 			commonjs(),
 			process.env.NODE_ENV === 'production' && terser(),
-			css({
-				output: 'build/styles.css'
+			linaria({
+				sourceMap: process.env.NODE_ENV !== 'production'
+			}),
+			postcss({
+				extract: 'styles.css',
+				minimize: true,
+				sourceMap: process.env.NODE_ENV !== 'production'
 			})
 		]
 	},
@@ -52,8 +58,13 @@ export default [
 			}),
 			commonjs(),
 			process.env.NODE_ENV === 'production' && terser(),
-			css({
-				output: 'build/styles.css'
+			linaria({
+				sourceMap: process.env.NODE_ENV !== 'production'
+			}),
+			postcss({
+				extract: 'styles.css',
+				minimize: true,
+				sourceMap: process.env.NODE_ENV !== 'production'
 			})
 		]
 	}
