@@ -8,8 +8,7 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
-    "react-app-polyfill": "^1.0.0",
-    "react-lazy-skeleton": "file:.yalc/react-lazy-skeleton"
+    "react-app-polyfill": "^1.0.0"
   },
   "alias": {
     "react": "../node_modules/react",
