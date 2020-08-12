@@ -63,5 +63,7 @@
     "ts-jest": "26.1.0",
     "typescript": "3.9.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react-intersection-observer": "8.26.2"
+  }
 }
