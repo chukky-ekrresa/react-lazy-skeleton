@@ -1,0 +1,86 @@
+{
+  "name": "react-lazy-skeleton",
+  "version": "0.1.1",
+  "description": "Responsive react image component with lazy-loading capabilities",
+  "author": "Ochuko Ekrresa <ekrresaochuko@gmail.com>",
+  "main": "build/index.js",
+  "module": "build/index.esm.js",
+  "types": "build/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "lint": "pretty-quick --staged && eslint 'src/**/*.{js,ts,tsx}' --cache",
+    "prebuild": "rimraf build",
+    "build": "rollup -c",
+    "postbuild": "yalc push",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chuck-huey/react-lazy-skeleton.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "react-image",
+    "react-lazy-pic",
+    "image",
+    "lazy-loading",
+    "progressive",
+		"fallback",
+		"react-shimmer"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chuck-huey/react-lazy-skeleton/issues"
+  },
+  "homepage": "https://github.com/chuck-huey/react-lazy-skeleton#readme",
+  "engines": {
+    "node": ">=10"
+  },
+  "peerDependencies": {
+    "react": ">= 16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "13.0.0",
+    "@rollup/plugin-node-resolve": "8.0.1",
+    "@testing-library/jest-dom": "5.11.3",
+    "@testing-library/react": "10.3.0",
+    "@types/jest": "26.0.0",
+    "@types/react": "16.9.38",
+    "@types/react-dom": "16.9.8",
+    "@typescript-eslint/eslint-plugin": "3.9.0",
+    "@typescript-eslint/parser": "3.9.0",
+    "eslint": "7.6.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-react": "7.20.5",
+    "eslint-plugin-react-hooks": "4.0.8",
+    "husky": "4.2.5",
+    "jest": "26.0.1",
+    "linaria": "1.3.3",
+    "prettier": "2.0.5",
+    "pretty-quick": "2.0.1",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "rimraf": "3.0.2",
+    "rollup": "2.16.1",
+    "rollup-plugin-peer-deps-external": "2.2.2",
+    "rollup-plugin-postcss": "3.1.5",
+    "rollup-plugin-terser": "6.1.0",
+    "rollup-plugin-typescript2": "0.27.1",
+    "ts-jest": "26.1.0",
+    "typescript": "3.9.5"
+  },
+  "dependencies": {
+    "react-intersection-observer": "8.26.2"
+	},
+	 "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint",
+      "pre-push": "yarn test"
+    }
+  }
+}

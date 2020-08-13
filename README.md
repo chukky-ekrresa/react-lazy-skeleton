@@ -1,2 +1,5 @@
 # react-image
-Repository for the @chuck-huey/react-image npm package
+
+Repository for the react-lazy-skeleton npm package
+
+DO NOT INSTALL!!! Package in development
