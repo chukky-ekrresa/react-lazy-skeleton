@@ -67,5 +67,5 @@ const parentCss = css`
 `;
 
 Parent.defaultProps = {
-	alt: 'loading failed'
+	alt: ''
 };
